@@ -2,8 +2,14 @@
 //   document.querySelector("#som_tecla_pom").play();
 // }
 
-function tocaSom(idElementoAudio) {
-  document.querySelector(idElementoAudio).play();
+function tocaSom(seletorAudio) {
+  const elemento = document.querySelector(seletorAudio);
+
+  if (elemento === null || elemento.localname === "audio") {
+    alert("Elemento não encontrado!");
+  } else {
+    elemento.play();
+  }
 }
 const listaDeTeclas = document.querySelectorAll(".tecla");
 
